@@ -1,0 +1,51 @@
+﻿@model IEnumerable<salonlardapper.Models.Salonlarclass>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Edit")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SalonAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YapilanIslem)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalonKapiNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IslemSayisi)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalonAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YapilanIslem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalonKapiNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IslemSayisi)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.SalonNo }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.SalonNo })
+        </td>
+    </tr>
+}
+
+</table>
